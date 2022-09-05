@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
+:root {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #f5f5f5;
+}
+
+body::before {
+}
+
+body {
+  background-image: url("./resources/sunset-valley-landscape-illustration-vector.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: max(1344px, 100vw);
+  backdrop-filter: brightness(80%);
+
+  box-sizing: border-box;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+main,
+footer {
+  box-sizing: border-box;
+  border: thin red solid;
+}
+
+main {
+  flex: 0 1 400px;
+  display: flex;
+  justify-content: space-between;
+
+  form {
+    align-self: end;
+  }
+}
+
+footer {
+  flex: 0 1 200px;
+}
