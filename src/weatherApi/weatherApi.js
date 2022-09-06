@@ -1,4 +1,6 @@
-import apiKey from "../apiKey";
+const apiKey1 = "d6a6e7ea035d0123";
+const apiKey2 = "e8b76c11569780b5";
+const apiKey = apiKey1 + apiKey2;
 
 const weatherApi = (() => {
   const getData = async (searchTerm, units) => {

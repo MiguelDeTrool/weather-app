@@ -29,28 +29,33 @@ const mainDisplayController = (() => {
   };
 
   const refreshForecast = (data) => {
-    console.log(fromUnixTime(data.list[8].dt));
     const days = Array.from(forecast.querySelectorAll(".day"));
 
-    for (let i = 0; i < days.length; i++) {
+    for (let i = 0; i < days.length; i += 1) {
       const dayName = days[i].querySelector(".day-name");
-      const temp = days[i].querySelector(".temp");
-      const icon = days[i].querySelector(".icon");
+      const forecastTemp = days[i].querySelector(".temp");
+      const forecastIcon = days[i].querySelector(".icon");
 
       dayName.textContent = format(
         fromUnixTime(data.list[i * 8].dt),
         "PP"
-      ).substring(0, 5);
-      temp.textContent = Math.round(data.list[i * 8].main.temp);
-      icon.src = `https://openweathermap.org/img/wn/${
+      ).slice(0, -6);
+      forecastTemp.textContent = Math.round(data.list[i * 8].main.temp);
+      forecastIcon.src = `https://openweathermap.org/img/wn/${
         data.list[i * 8].weather[0].icon
       }@2x.png`;
     }
   };
 
-  const refreshData = (data) => {
+  const refreshGif = (url) => {
+    const gifElement = document.querySelector(".gif");
+    gifElement.src = url;
+  };
+
+  const refreshData = (data, url) => {
     refreshCurrent(data[0]);
     refreshForecast(data[1]);
+    refreshGif(url);
   };
 
   return {

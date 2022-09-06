@@ -10,7 +10,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: max(1344px, 100vw);
-  backdrop-filter: brightness(80%);
+  backdrop-filter: brightness(75%);
 
   box-sizing: border-box;
 
@@ -147,6 +147,10 @@ form {
 }
 
 .gif {
+  display: block;
+  object-fit: scale-down;
+  height: 200px;
+  border-radius: 10px;
   text-align: center;
 }
 
