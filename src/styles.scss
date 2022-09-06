@@ -99,7 +99,21 @@ form {
     height: 30px;
     width: 30px;
     background-color: rgba(255, 255, 255, 0.75);
+    outline: none;
     border-radius: 100%;
+    transition: all 0.05s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.95);
+      transform: scale(110%);
+    }
+
+    &:active {
+      transition: all 0.01s;
+      background-color: rgba(200, 200, 200, 0.75);
+      transform: scale(90%);
+    }
   }
 
   .underline {
