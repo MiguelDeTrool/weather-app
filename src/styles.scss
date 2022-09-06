@@ -61,6 +61,8 @@ main {
     .weather-icon {
       object-fit: none;
       height: 70px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
     }
   }
 
@@ -95,7 +97,7 @@ form {
     margin: 5px;
     height: 30px;
     width: 30px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 100%;
   }
 
@@ -144,8 +146,39 @@ form {
   }
 }
 
+.gif {
+  text-align: center;
+}
+
 .forecast {
-  flex: 0 1 200px;
+  flex: 0 1 120px;
+
+  display: flex;
+
+  > * {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .day-name {
+      font-size: 1.2rem;
+    }
+
+    .temp-container {
+      font-weight: 800;
+    }
+
+    .icon {
+      object-fit: none;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+    }
+  }
 }
 
 footer {
