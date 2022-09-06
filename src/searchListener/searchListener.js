@@ -1,5 +1,5 @@
 import weatherApi from "../weatherApi/weatherApi";
-import displayController from "../displayController/displayController";
+import mainDisplayController from "../displayControllers/mainDisplayController";
 
 const searchListener = (() => {
   const updateDataAndDisplay = async (e) => {
@@ -7,7 +7,7 @@ const searchListener = (() => {
     const searchTerm = e.target.elements.location.value.toString();
     const units = "metric";
     const data = await weatherApi.getData(searchTerm, units);
-    displayController.refreshData(data);
+    mainDisplayController.refreshData(data);
   };
 
   const addListener = (selector) => {

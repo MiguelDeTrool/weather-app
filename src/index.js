@@ -3,19 +3,19 @@ import "./styles.scss";
 
 import searchListener from "./searchListener/searchListener";
 import weatherApi from "./weatherApi/weatherApi";
-import displayController from "./displayController/displayController";
+import mainDisplayController from "./displayControllers/mainDisplayController";
 
 searchListener.addListener("form");
 
-const startup = async () => {
+const startUp = async () => {
   const units = "metric";
   const searchTerm = "London";
   try {
     const data = await weatherApi.getData(searchTerm, units);
-    displayController.refreshData(data);
+    mainDisplayController.refreshData(data);
   } catch (err) {
     console.log(err);
   }
 };
 
-startup();
+startUp();

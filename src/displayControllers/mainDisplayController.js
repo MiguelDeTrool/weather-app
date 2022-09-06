@@ -1,6 +1,6 @@
 import { format, fromUnixTime } from "date-fns";
 
-const displayController = (() => {
+const mainDisplayController = (() => {
   // Get all DOM nodes susceptible to editing
   const weatherDesc = document.querySelector(".weather-desc .data");
   const weatherIcon = document.querySelector(".weather-icon");
@@ -28,8 +28,8 @@ const displayController = (() => {
   };
 
   const refreshData = (data) => {
-    refreshText(data);
-    refreshTime(data);
+    refreshText(data[0]);
+    refreshTime(data[0]);
   };
 
   return {
@@ -37,4 +37,4 @@ const displayController = (() => {
   };
 })();
 
-export default displayController;
+export default mainDisplayController;
