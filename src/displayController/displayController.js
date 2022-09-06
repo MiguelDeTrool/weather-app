@@ -2,15 +2,15 @@ import { format, fromUnixTime } from "date-fns";
 
 const displayController = (() => {
   // Get all DOM nodes susceptible to editing
-  const weatherDesc = document.querySelector(".weather-desc");
-  const location = document.querySelector(".location");
-  const time = document.querySelector(".time");
-  const temp = document.querySelector(".temp");
+  const weatherDesc = document.querySelector(".weather-desc .data");
   const weatherIcon = document.querySelector(".weather-icon");
-  const feelsLike = document.querySelector(".feels-like");
-  const humidity = document.querySelector(".humidity");
-  const pressure = document.querySelector(".pressure");
-  const windSpeed = document.querySelector(".wind-speed");
+  const location = document.querySelector(".location .data");
+  const time = document.querySelector(".time .data");
+  const temp = document.querySelector(".temp .data");
+  const feelsLike = document.querySelector(".feels-like .data");
+  const humidity = document.querySelector(".humidity .data");
+  const pressure = document.querySelector(".pressure .data");
+  const windSpeed = document.querySelector(".wind-speed .data");
 
   const refreshTime = (data) => {
     time.textContent = format(fromUnixTime(data.dt), "PPPP, p");
@@ -20,10 +20,10 @@ const displayController = (() => {
     weatherDesc.textContent = data.weather[0].description;
     location.textContent = data.name;
     temp.textContent = data.main.temp;
-    weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather.icon}@2x.png`;
+    weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     feelsLike.textContent = data.main.feels_like;
     humidity.textContent = data.main.humidity;
-    pressure.textContent = data.main.pressure;
+    pressure.textContent = data.main.pressure / 1000;
     windSpeed.textContent = data.wind.speed;
   };
 

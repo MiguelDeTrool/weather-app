@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./Robinweatherall-Seasonal-Sun-2.ico"
+    />
     <script defer src="main.js"></script>
   </head>
   <body>
     <main>
       <div class="general">
-        <div class="weather-desc"></div>
-        <div class="location"></div>
-        <div class="time"></div>
-        <div class="temp"></div>
-        <div class="temp-unit"></div>
-        <img class="weather-icon" />
+        <div class="location">
+          <div class="data"></div>
+        </div>
+        <div class="weather-desc">
+          <img class="weather-icon" />
+          <div class="data"></div>
+        </div>
+        <div class="time">
+          <div class="data"></div>
+        </div>
+        <div class="temp">
+          <div class="data"></div>
+          <span class="temp-unit">°C</span>
+        </div>
       </div>
 
       <form action="">
@@ -31,10 +44,38 @@
       </form>
 
       <div class="details">
-        <div class="feels-like"></div>
-        <div class="humidity"></div>
-        <div class="pressure"></div>
-        <div class="wind-speed"></div>
+        <div class="feels-like">
+          <div class="icon">💆</div>
+          <h3 class="title">Feels Like</h3>
+          <div class="data-container">
+            <div class="data"></div>
+            <span class="unit">C°</span>
+          </div>
+        </div>
+        <div class="humidity">
+          <div class="icon">💧</div>
+          <h3 class="title">Humidity</h3>
+          <div class="data-container">
+            <div class="data"></div>
+            <span class="unit">%</span>
+          </div>
+        </div>
+        <div class="pressure">
+          <div class="icon">⏲️</div>
+          <h3 class="title">Pressure</h3>
+          <div class="data-container">
+            <div class="data"></div>
+            <span class="unit">Bar</span>
+          </div>
+        </div>
+        <div class="wind-speed">
+          <div class="icon">💨</div>
+          <h3 class="title">Wind Speed</h3>
+          <div class="data-container">
+            <div class="data"></div>
+            <span class="unit">m/s</span>
+          </div>
+        </div>
       </div>
     </main>
 

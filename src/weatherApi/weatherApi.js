@@ -1,9 +1,11 @@
+import apiKey from "../apiKey";
+
 const weatherApi = (() => {
-  const getData = async (searchTerm, units, key) => {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&units=${units}&APPID=${key}`;
+  const getData = async (searchTerm, units) => {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&units=${units}&APPID=${apiKey}`;
 
     try {
-      let response = await fetch(url, { mode: "cors" });
+      const response = await fetch(url, { mode: "cors" });
 
       if (response.status === 404) {
         throw new Error("404");
@@ -13,7 +15,7 @@ const weatherApi = (() => {
         throw new Error("400");
       }
 
-      let data = await response.json();
+      const data = await response.json();
 
       return data;
     } catch (err) {
