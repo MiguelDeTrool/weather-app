@@ -32,6 +32,7 @@ const weatherApi = (() => {
       return data;
     } catch (err) {
       console.log(err);
+      return "err";
     }
   };
 

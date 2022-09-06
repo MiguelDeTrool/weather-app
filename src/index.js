@@ -5,7 +5,6 @@ import searchListener from "./searchListener/searchListener";
 import weatherApi from "./weatherApi/weatherApi";
 import giphyApi from "./giphyApi/giphyApi";
 import mainDisplayController from "./displayControllers/mainDisplayController";
-import { format } from "date-fns";
 
 searchListener.addListener("form");
 
