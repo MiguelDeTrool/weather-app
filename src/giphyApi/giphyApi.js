@@ -10,14 +10,12 @@ const giphyApi = (() => {
       if (txt === "") {
         search = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
       } else {
-        search = `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${txt}`;
+        search = `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=Weather ${txt}&rating=g&offset=4`;
       }
 
       const response = await fetch(search, { mode: "cors" });
 
       const responseData = await response.json();
-
-      console.log(responseData);
 
       return responseData.data.images.fixed_height.url;
     } catch (err) {
